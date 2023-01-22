@@ -1149,6 +1149,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1068948234711520125, guid: fc9b6bf83d1e74946940dde366dc45a6, type: 3}
+      propertyPath: defaultFov
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 7544825672229993683, guid: fc9b6bf83d1e74946940dde366dc45a6, type: 3}
       propertyPath: m_Name
       value: Player
