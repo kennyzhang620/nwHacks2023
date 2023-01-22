@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   p: {fileID: 1068948234711520125}
+  cup: {fileID: 7238959331026368832}
 --- !u!4 &7544825672229993686 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6487488682772570376, guid: e57c1b0ce45b0cc46b290c630535dbef, type: 3}

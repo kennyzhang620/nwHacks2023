@@ -245,9 +245,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4cf65758aef209428f0773b3cdcf385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 5
   faceCamera: {fileID: 7746350746699811617}
   backCamera: {fileID: 6988006663022770226}
+  ratState: 0
 --- !u!1 &9020229327826129044
 GameObject:
   m_ObjectHideFlags: 0
