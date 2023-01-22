@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     
     public Rigidbody RigidBody => rb;
     public Camera PlayerCamera => playerCamera;
+    public float cameraY = 30f;
     
     public float moveSpeed = 5f;
     public float jumpForce = 5f;
@@ -42,6 +43,25 @@ public class Player : MonoBehaviour
 
         float mouseX = Input.GetAxis("Mouse X");
         transform.Rotate(Vector3.up * mouseX);
+        float mouseY = Input.GetAxis("Mouse Y");
+        print(cameraY);
+      
+        if (mouseY > 0 && cameraY < 900){
+        transform.Rotate(Vector3.left * mouseY);
+        cameraY++;
+        }
+
+        if (mouseY < 0 && cameraY > -900){
+        transform.Rotate(Vector3.left * mouseY);
+        cameraY--;
+        }
+
+
+//        if(cameraY<500 &&cameraY >=0){
+  //      cameraY+-=1;
+    //       transform.Rotate(Vector3.left * mouseY);
+      //  }
+    
 
         if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
         {
