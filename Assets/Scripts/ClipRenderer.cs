@@ -8,16 +8,16 @@ public class ClipRenderer : MonoBehaviour
 {
     public VideoPlayer VideoPlayer;
     public VideoClip vc;
-    public int index = 0;
+    public int index = 1;
     // Start is called before the first frame update
     void Start()
     {
-        PlayIndex(0);
+        PlayIndex(1);
     }
     public void PlayIndex(int i)
     {
         PlayStatic();
-        if (Game_Data.Videos.Count > 0 && i >= 0 && i < Game_Data.Videos.Count)
+        if (Game_Data.Videos.Count > 1 && i >= 1 && i < Game_Data.Videos.Count)
         {
             try
             {
@@ -36,12 +36,12 @@ public class ClipRenderer : MonoBehaviour
         if (index + ind > Game_Data.Videos.Count)
             index = Game_Data.Videos.Count - 1;
 
-        else if (index + ind < 0)
-            index = 0;
+        else if (index + ind < 1)
+            index = 1;
         else
             index += ind;
 
-        if (Game_Data.Videos.Count > 0)
+        if (Game_Data.Videos.Count > 1)
         {
             try
             {
@@ -55,7 +55,7 @@ public class ClipRenderer : MonoBehaviour
     }
     public void PlayStatic()
     {
-        if (Game_Data.Videos.Count > 0)
+        if (Game_Data.Videos.Count > 1)
         {
             VideoPlayer.url = Game_Data.Videos[Game_Data.Videos.Count - 1].downloadUrl;
             VideoPlayer.source = VideoSource.Url;
