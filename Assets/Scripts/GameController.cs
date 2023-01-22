@@ -126,7 +126,7 @@ public class GameController : MonoBehaviour
 
     public void SpawnRatScareEvent()
     {
-        spawnRat(ratSpawn1);
+        spawnRat();
     }
 
     public void SpawnRatAttackEvent()
@@ -134,7 +134,7 @@ public class GameController : MonoBehaviour
         SendTextMessageToPlayer("We suggest you find a weapon. Soon.", 10);
         for (int i = 0; i < numRatSpawn; i++)
         {
-            spawnRat(ratSpawn2,1);
+            spawnRat(null,1);
         }
     }
 
