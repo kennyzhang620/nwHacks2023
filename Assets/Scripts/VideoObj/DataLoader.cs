@@ -9,6 +9,7 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 using Newtonsoft.Json;
 using TinyJson;
+using System.Text;
 
 public class DataLoader : MonoBehaviour
 {
@@ -33,12 +34,19 @@ public class DataLoader : MonoBehaviour
         int hash = (int)t.TotalSeconds;
         //   print(hash);
 
-        webForm.AddField("", 0);
+        webForm.AddField("name", "example name");
 
         print("Uploading...");
-        UnityWebRequest www = UnityWebRequest.Post("https://infiniteblockmdns.azurewebsites.net/append", webForm);
-        www.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        byte[] bytes = Encoding.ASCII.GetBytes("{\"name\":\"exmpl\"}");
+        UnityWebRequest www = UnityWebRequest.Post("https://livepeer.studio/api/asset/request-upload", webForm);
+        www.SetRequestHeader("Authorization", "Bearer 0488e0b2-7284-42cd-ad30-64a49b924d6c");
         www.SetRequestHeader("Access-Control-Allow-Origin", "*");
+        www.SetRequestHeader("Content-Type", "application/json");
+        //www.uploadHandler.contentType = "application/json";
+
+
+
         yield return www.SendWebRequest();
 
         if (www.isNetworkError || www.isHttpError)
@@ -47,7 +55,7 @@ public class DataLoader : MonoBehaviour
         }
         else
         {
-            print("Form upload complete!");
+            print("---> " + www.downloadHandler.text);
         }
     }
 
@@ -113,20 +121,8 @@ public class DataLoader : MonoBehaviour
     private void Start()
     {
         StartCoroutine(Download());
+        StartCoroutine(Upload());
      //  StartCoroutine(Delete("1e99df13-79e4-437f-ab0a-85a341392eb5"));
     }
 
-    /*
-    // Update is called once per frame
-    void Update()
-    {
-        DisplayError = GameData.ErrorStatus;
-        
-        if (GameData.AccessMode == -1)
-        {
-            GameData.AccessMode = 0;
-            EraseData();
-        }
-    }
-    */
 }
