@@ -17,7 +17,7 @@ public class ClipRenderer : MonoBehaviour
     public void PlayIndex(int i)
     {
         PlayStatic();
-        if (Game_Data.Videos.Count > 0 && i > 0 && i < Game_Data.Videos.Count)
+        if (Game_Data.Videos.Count > 0 && i >= 0 && i < Game_Data.Videos.Count)
         {
             try
             {
@@ -53,10 +53,12 @@ public class ClipRenderer : MonoBehaviour
     }
     public void PlayStatic()
     {
-
-            VideoPlayer.clip = vc;
-            VideoPlayer.source = VideoSource.VideoClip;
-        VideoPlayer.controlledAudioTrackCount = 1;
-        VideoPlayer.Play();
+        if (Game_Data.Videos.Count > 0)
+        {
+            VideoPlayer.url = Game_Data.Videos[Game_Data.Videos.Count - 1].downloadUrl;
+            VideoPlayer.source = VideoSource.Url;
+            VideoPlayer.controlledAudioTrackCount = 1;
+            VideoPlayer.Play();
+        }
     }
 }
