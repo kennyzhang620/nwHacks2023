@@ -7,6 +7,12 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     private bool pickedUp;
+    private Rigidbody rb;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -17,23 +23,35 @@ public class Item : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (Input.GetKeyDown(KeyCode.E) && pickedUp)
-        //     Drop();
+        if (Input.GetKeyDown(KeyCode.F) && pickedUp)
+            Drop();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!pickedUp && other.CompareTag("Player"))
+            GameController.gameController.SendTextMessageToPlayer($"Press E to pickup {name}.", 3f);
     }
 
     private void OnTriggerStay(Collider other)
     {
         print("trigger");
-        if (!pickedUp && other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
+        if (!pickedUp && other.CompareTag("Player"))
         {
-            var p = other.GetComponent<Player>();
-            p.PickupItem(this);
-            pickedUp = true;
+            if(Input.GetKey(KeyCode.E))
+            {
+                var p = other.GetComponent<Player>();
+                p.PickupItem(this);
+                pickedUp = true;
+                rb.isKinematic = true;
+                GameController.gameController.SendTextMessageToPlayer($"Press F to drop {name}.", 3f);
+            }
         }
     }
 
     void Drop()
     {
         transform.parent = null;
+        rb.isKinematic = false;
     }
 }
