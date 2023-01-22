@@ -53,5 +53,6 @@ public class Item : MonoBehaviour
     {
         transform.parent = null;
         rb.isKinematic = false;
+        pickedUp = false;
     }
 }
