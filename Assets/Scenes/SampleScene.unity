@@ -617,6 +617,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: level meshes (office)
       objectReference: {fileID: 0}
+    - target: {fileID: 7150271390905787125, guid: 1ac31ad456bd34025aeca0b1e195f0ef, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7150271390905787125, guid: 1ac31ad456bd34025aeca0b1e195f0ef, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7150271390905787125, guid: 1ac31ad456bd34025aeca0b1e195f0ef, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7150271390905787125, guid: 1ac31ad456bd34025aeca0b1e195f0ef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 18.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826561739044661530, guid: 1ac31ad456bd34025aeca0b1e195f0ef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 21.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 8912049515002365231, guid: 1ac31ad456bd34025aeca0b1e195f0ef, type: 3}
+      propertyPath: m_Intensity
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ac31ad456bd34025aeca0b1e195f0ef, type: 3}
 --- !u!1 &693867646 stripped
@@ -744,7 +768,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 8.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1550,24 +1574,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!1 &1904315956 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7746868146913499586, guid: 9c82e39c15f868f4a89f645df658b57b, type: 3}
-  m_PrefabInstance: {fileID: 427464338065051233}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &1904315963
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1904315956}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1950618925 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8603541622604761643, guid: 1ac31ad456bd34025aeca0b1e195f0ef, type: 3}
@@ -1767,15 +1773,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 652639417223338698, guid: 9c82e39c15f868f4a89f645df658b57b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.06
+      value: -2.33
       objectReference: {fileID: 0}
     - target: {fileID: 652639417223338698, guid: 9c82e39c15f868f4a89f645df658b57b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.312
+      value: -0.37
       objectReference: {fileID: 0}
     - target: {fileID: 652639417223338698, guid: 9c82e39c15f868f4a89f645df658b57b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.86
+      value: -1.46
       objectReference: {fileID: 0}
     - target: {fileID: 652639417223338698, guid: 9c82e39c15f868f4a89f645df658b57b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1804,10 +1810,6 @@ PrefabInstance:
     - target: {fileID: 652639417223338698, guid: 9c82e39c15f868f4a89f645df658b57b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4864018413550666958, guid: 9c82e39c15f868f4a89f645df658b57b, type: 3}
-      propertyPath: m_Name
-      value: Newspaper Camera
       objectReference: {fileID: 0}
     - target: {fileID: 7746868146913499586, guid: 9c82e39c15f868f4a89f645df658b57b, type: 3}
       propertyPath: m_Name

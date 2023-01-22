@@ -6,8 +6,9 @@ using UnityEngine;
 public class Rat : MonoBehaviour
 {
     private Rigidbody rb;
+    public float moveSpeed;
 
-    private void Awake()
+    private void Awake()    
     {
         rb = GetComponent<Rigidbody>();
     }
@@ -22,5 +23,10 @@ public class Rat : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void dashForward()
+    {
+        rb.velocity = transform.forward * moveSpeed;
     }
 }
