@@ -16,6 +16,7 @@ public class hide : MonoBehaviour
     {
         if (Input.GetKey("escape")) {
             close.SetActive(false);
+            GameController.gameController.SpawnRatAttackEvent();
         }
     }
 }

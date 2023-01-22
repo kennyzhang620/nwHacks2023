@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/test_livepeer.unity
-    guid: c74de721161284845becc53a3385d888
+    path: Assets/Scenes/Full level sample scene.unity
+    guid: 326534ee056904d4480f9baaa1402adc
   m_configObjects: {}

@@ -17,7 +17,7 @@ public class displayvideo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(Input.GetKeyDown("space")){
+       if(Input.GetKeyDown("k")){
         print("test");
         foreach(ClipRenderer x in monitor){
             if(x.index == index){
