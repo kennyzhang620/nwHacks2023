@@ -87,7 +87,7 @@ public class DataLoader : MonoBehaviour
     private void Start()
     {
         StartCoroutine(Download());
-        StartCoroutine(Upload());
+        // StartCoroutine(Upload());
      //  StartCoroutine(Delete("1e99df13-79e4-437f-ab0a-85a341392eb5"));
     }
 

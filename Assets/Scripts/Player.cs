@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     
     //for picking up objects
     public Transform pickupLocationLocal;
+    public Transform playerFeet;
 
     private void Awake()
     {
