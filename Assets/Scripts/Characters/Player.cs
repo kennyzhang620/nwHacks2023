@@ -12,11 +12,12 @@ public class Player : MonoBehaviour
     public Rigidbody RigidBody => rb;
     public Camera PlayerCamera => playerCamera;
     public float cameraY = 30f;
+    public float defaultFov = 60f;
     
     public float moveSpeed = 5f;
     public float jumpForce = 5f;
     private bool isJumping = false;
-    
+
     //for picking up objects
     public Transform pickupLocationLocal;
     public Transform playerFeet;
@@ -32,46 +33,81 @@ public class Player : MonoBehaviour
     {
         
     }
+    
 
     void Update()
     {
+
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
-
+        
         Vector3 movement = new Vector3(moveX, 0f, moveZ);
 
-        if (rb.velocity.magnitude < 3)
+        movement *= moveSpeed * Time.deltaTime;
+        movement = transform.TransformVector(movement);
+        transform.Translate(movement, Space.World);
+
+        // rb.AddRelativeForce(moveVector *);
+            
+        // Vector3 movement = new Vector3(moveX, 0f, moveZ);
+        //
+        // if (rb.velocity.magnitude < 3)
+        // {
+        //     rb.AddRelativeForce(transform.position + moveSpeed * Time.deltaTime * movement * 100);
+        // }
+        //
+        // float mouseX = Input.GetAxis("Mouse X");
+        // transform.Rotate(Vector3.up * mouseX);
+        // float mouseY = Input.GetAxis("Mouse Y");
+
+        // if (mouseY > 0 && cameraY < 900){
+        // transform.Rotate(Vector3.left * mouseY);
+        // cameraY++;
+        // }
+        //
+        // if (mouseY < 0 && cameraY > -900){
+        // transform.Rotate(Vector3.left * mouseY);
+        // cameraY--;
+        // }
+
+        if (Input.GetKey(KeyCode.Mouse1))
         {
-            rb.AddRelativeForce(transform.position + moveSpeed * Time.deltaTime * movement * 100);
-        }
-        
-        float mouseX = Input.GetAxis("Mouse X");
-        transform.Rotate(Vector3.up * mouseX);
-        float mouseY = Input.GetAxis("Mouse Y");
-        print(cameraY);
-      
-        if (mouseY > 0 && cameraY < 900){
-        transform.Rotate(Vector3.left * mouseY);
-        cameraY++;
-        }
+            var camAngles = playerCamera.transform.eulerAngles;
+            camAngles.x = 45;
+            camAngles.z = 0;
+            playerCamera.transform.eulerAngles = camAngles;
 
-        if (mouseY < 0 && cameraY > -900){
-        transform.Rotate(Vector3.left * mouseY);
-        cameraY--;
+        }
+        else
+        {
+            var camAngles = playerCamera.transform.eulerAngles;
+            camAngles.x = 0;
+            camAngles.z = 0;
+            playerCamera.transform.eulerAngles = camAngles;
         }
 
-
-//        if(cameraY<500 &&cameraY >=0){
-  //      cameraY+-=1;
-    //       transform.Rotate(Vector3.left * mouseY);
-      //  }
-    
 
         if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isJumping = true;
         }
+
+        //zoom in feature
+        if (Input.GetKey(KeyCode.C))
+        {
+            playerCamera.fieldOfView = defaultFov / 2;
+        }
+        else
+        {
+            playerCamera.fieldOfView = defaultFov;
+        }
+    }
+
+    private void LateUpdate()
+    {
+        float mouseX = Input.GetAxis("Mouse X");
+        transform.Rotate(Vector3.up * mouseX);
     }
 
     public void PickupItem(Item item)

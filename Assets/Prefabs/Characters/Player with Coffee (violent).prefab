@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 4353011260908916387, guid: e57c1b0ce45b0cc46b290c630535dbef, type: 3}
+      propertyPath: defaultFov
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 5815098852258508023, guid: e57c1b0ce45b0cc46b290c630535dbef, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -54,6 +58,10 @@ PrefabInstance:
     - target: {fileID: 6487488682455369315, guid: e57c1b0ce45b0cc46b290c630535dbef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487488682455369316, guid: e57c1b0ce45b0cc46b290c630535dbef, type: 3}
+      propertyPath: field of view
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6487488682772570376, guid: e57c1b0ce45b0cc46b290c630535dbef, type: 3}
       propertyPath: m_RootOrder
