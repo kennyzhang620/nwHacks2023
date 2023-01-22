@@ -53,15 +53,9 @@ public class VideoCaptureSol : MonoBehaviour
 
             print("url " + tx.url);
 
-            StreamReader r = new StreamReader(filename);
-
-            UnityWebRequest www2 = UnityWebRequest.Put(tx.url, "PUT");
+            UnityWebRequest www2 = UnityWebRequest.Put(tx.url, File.ReadAllBytes(filename));
 
             // setup upload/download headers (this is what sets the json body)
-            byte[] bodyRaw2 = Encoding.UTF8.GetBytes(r.ReadToEnd());
-            www2.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw2);
-            www2.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
-
             // set your headers
             www2.SetRequestHeader("Authorization", "Bearer " + "0488e0b2-7284-42cd-ad30-64a49b924d6c");
             www2.SetRequestHeader("Content-Type", "video/mp4");
@@ -84,7 +78,7 @@ public class VideoCaptureSol : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        
+        print("test: " + Application.persistentDataPath+"/test.mp4");
     }
 
     void Update()
@@ -93,6 +87,7 @@ public class VideoCaptureSol : MonoBehaviour
         if (test)
         {
             StartVideoCaptureTest();
+            StartCoroutine(Upload(Application.persistentDataPath + "/test.mp4"));
             test = false;
         }
         if (m_VideoCapture == null || !m_VideoCapture.IsRecording)
