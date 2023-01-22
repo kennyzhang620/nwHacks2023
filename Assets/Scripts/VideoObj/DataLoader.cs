@@ -7,7 +7,6 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
-using System.Text.Json;
 using Newtonsoft.Json;
 using TinyJson;
 
@@ -39,6 +38,7 @@ public class DataLoader : MonoBehaviour
         print("Uploading...");
         UnityWebRequest www = UnityWebRequest.Post("https://infiniteblockmdns.azurewebsites.net/append", webForm);
         www.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        www.SetRequestHeader("Access-Control-Allow-Origin", "*");
         yield return www.SendWebRequest();
 
         if (www.isNetworkError || www.isHttpError)
@@ -51,7 +51,7 @@ public class DataLoader : MonoBehaviour
         }
     }
 
-    IEnumerator Delete(int uid)
+    IEnumerator Delete(string uid)
     {
         // Not part of leaderboards anymore.
 
@@ -59,8 +59,9 @@ public class DataLoader : MonoBehaviour
         webForm.AddField("uid", uid);
 
         print("Deleting...");
-        UnityWebRequest www = UnityWebRequest.Post("https://infiniteblockmdns.azurewebsites.net/delete", webForm);
-        www.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        UnityWebRequest www = UnityWebRequest.Delete("https://livepeer.studio/api/asset/" + uid);
+        www.SetRequestHeader("Authorization", "Bearer 0488e0b2-7284-42cd-ad30-64a49b924d6c");
+        www.SetRequestHeader("Access-Control-Allow-Origin", "*");
         yield return www.SendWebRequest();
 
         if (www.isNetworkError || www.isHttpError)
@@ -77,7 +78,8 @@ public class DataLoader : MonoBehaviour
     {
         print("Downloading...");
         UnityWebRequest www = UnityWebRequest.Get("https://livepeer.studio/api/asset");
-        www.SetRequestHeader("Authorization", "Bearer b6debf67-87f3-45fa-a7b8-fadb4abbfef4");
+        www.SetRequestHeader("Authorization", "Bearer 0488e0b2-7284-42cd-ad30-64a49b924d6c");
+        www.SetRequestHeader("Access-Control-Allow-Origin", "*");
 
         /* 
          [{"id":"ec6f79f3-129c-4889-bf5c-f533208de66e","hash":[{"hash":"092abe31b5786a4aa2590866b6b783a0","algorithm":"md5"},
@@ -96,7 +98,6 @@ public class DataLoader : MonoBehaviour
         else
         {
             var json = www.downloadHandler.text;
-            print(json);
             //Game_Data.Videos = JsonUtility.FromJson<List<AssetA>>(json);
 
 
@@ -112,6 +113,7 @@ public class DataLoader : MonoBehaviour
     private void Start()
     {
         StartCoroutine(Download());
+     //  StartCoroutine(Delete("1e99df13-79e4-437f-ab0a-85a341392eb5"));
     }
 
     /*
