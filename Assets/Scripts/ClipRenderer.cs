@@ -16,7 +16,6 @@ public class ClipRenderer : MonoBehaviour
     }
     public void PlayIndex(int i)
     {
-        PlayStatic();
         if (Game_Data.Videos.Count > 0 && i >= 0 && i < Game_Data.Videos.Count)
         {
             try
