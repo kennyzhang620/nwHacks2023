@@ -5,6 +5,7 @@ using UnityEngine.Windows.WebCam;
 using UnityEngine.Networking;
 using System.Text;
 using TinyJson;
+using System.IO;
 
 public class VideoCaptureSol : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class VideoCaptureSol : MonoBehaviour
     float m_stopRecordingTimer = float.MaxValue;
 
     public string UploadFilePath;
+    public bool test = false;
     
     IEnumerator Upload(string filename)
     {
@@ -51,10 +53,12 @@ public class VideoCaptureSol : MonoBehaviour
 
             print("url " + tx.url);
 
+            StreamReader r = new StreamReader(filename);
+
             UnityWebRequest www2 = UnityWebRequest.Put(tx.url, "PUT");
 
             // setup upload/download headers (this is what sets the json body)
-            byte[] bodyRaw2 = Encoding.UTF8.GetBytes(filename);
+            byte[] bodyRaw2 = Encoding.UTF8.GetBytes(r.ReadToEnd());
             www2.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw2);
             www2.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
 
@@ -80,11 +84,17 @@ public class VideoCaptureSol : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        StartVideoCaptureTest();
+        
     }
 
     void Update()
     {
+
+        if (test)
+        {
+            StartVideoCaptureTest();
+            test = false;
+        }
         if (m_VideoCapture == null || !m_VideoCapture.IsRecording)
         {
             return;
