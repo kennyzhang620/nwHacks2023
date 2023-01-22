@@ -39,8 +39,11 @@ public class Player : MonoBehaviour
 
         Vector3 movement = new Vector3(moveX, 0f, moveZ);
 
-        rb.MovePosition(transform.position + moveSpeed * Time.deltaTime * movement);
-
+        if (rb.velocity.magnitude < 3)
+        {
+            rb.AddRelativeForce(transform.position + moveSpeed * Time.deltaTime * movement * 100);
+        }
+        
         float mouseX = Input.GetAxis("Mouse X");
         transform.Rotate(Vector3.up * mouseX);
         float mouseY = Input.GetAxis("Mouse Y");

@@ -25,40 +25,6 @@ public class DataLoader : MonoBehaviour
         StartCoroutine(Download());
     }
 
-    IEnumerator Upload()
-    {
-        WWWForm webForm = new WWWForm();
-        TimeSpan t = DateTime.UtcNow - new DateTime(2001, 6, 20);
-        // print("S: " + secondsSinceEpoch);
-
-        int hash = (int)t.TotalSeconds;
-        //   print(hash);
-
-        webForm.AddField("name", "example name");
-
-        print("Uploading...");
-
-        byte[] bytes = Encoding.ASCII.GetBytes("{\"name\":\"exmpl\"}");
-        UnityWebRequest www = UnityWebRequest.Post("https://livepeer.studio/api/asset/request-upload", webForm);
-        www.SetRequestHeader("Authorization", "Bearer 0488e0b2-7284-42cd-ad30-64a49b924d6c");
-        www.SetRequestHeader("Access-Control-Allow-Origin", "*");
-        www.SetRequestHeader("Content-Type", "application/json");
-        //www.uploadHandler.contentType = "application/json";
-
-
-
-        yield return www.SendWebRequest();
-
-        if (www.isNetworkError || www.isHttpError)
-        {
-            print(www.error);
-        }
-        else
-        {
-            print("---> " + www.downloadHandler.text);
-        }
-    }
-
     IEnumerator Delete(string uid)
     {
         // Not part of leaderboards anymore.
