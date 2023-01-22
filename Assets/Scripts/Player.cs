@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     private bool isJumping = false;
     
     //for picking up objects
-    public Vector3 pickupLocationLocal;
+    public Transform pickupLocationLocal;
 
     private void Awake()
     {
@@ -52,8 +52,8 @@ public class Player : MonoBehaviour
 
     public void PickupItem(Item item)
     {
-        var pos = transform.TransformPoint(pickupLocationLocal);
-        item.transform.position = pos;
+        item.transform.position = pickupLocationLocal.position;
+        item.transform.rotation = pickupLocationLocal.rotation;
         item.transform.parent = transform;
     }
 
