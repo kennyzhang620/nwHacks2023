@@ -24,10 +24,12 @@ public class displayvideo : MonoBehaviour
                 x.PlayIndex(x.index);
             }
             else {
-                x.PlayStatic();
+                index=1;
+                x.PlayIndex(x.index);
+                
             }
 
-            if (index < max)
+            if (index <= max)
                 index++;
             else
                 index = 0;
