@@ -965,7 +965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VideoPlayer: {fileID: 1864538406}
-  vc: {fileID: 32900000, guid: 91eefb4919b52456d915a2fa0165dc53, type: 3}
+  vc: {fileID: 0}
   index: 0
 --- !u!328 &1864538406
 VideoPlayer:

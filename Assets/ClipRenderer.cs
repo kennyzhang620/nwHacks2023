@@ -36,14 +36,16 @@ public class ClipRenderer : MonoBehaviour
         if (index + ind > Game_Data.Videos.Count)
             index = Game_Data.Videos.Count - 1;
 
-        if (index + ind < 0)
+        else if (index + ind < 0)
             index = 0;
+        else
+            index += ind;
 
         if (Game_Data.Videos.Count > 0)
         {
             try
             {
-                VideoPlayer.url = Game_Data.Videos[index += ind].downloadUrl;
+                VideoPlayer.url = Game_Data.Videos[index].downloadUrl;
                 VideoPlayer.source = VideoSource.Url;
                 VideoPlayer.controlledAudioTrackCount = 1;
                 VideoPlayer.Play();
