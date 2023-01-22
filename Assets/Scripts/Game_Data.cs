@@ -41,6 +41,12 @@ public class VideoSpec
     public string format { get; set; }
     public double duration { get; set; }
 }
+
+public class UploadObj
+{
+    public string url;
+}
+
 public static class Game_Data 
 {
     public static List<AssetA> Videos = new List<AssetA>();

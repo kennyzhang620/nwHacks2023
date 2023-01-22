@@ -9,6 +9,7 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 using Newtonsoft.Json;
 using TinyJson;
+using System.Text;
 
 public class DataLoader : MonoBehaviour
 {
@@ -22,33 +23,6 @@ public class DataLoader : MonoBehaviour
     public void GetRequest()
     {
         StartCoroutine(Download());
-    }
-
-    IEnumerator Upload()
-    {
-        WWWForm webForm = new WWWForm();
-        TimeSpan t = DateTime.UtcNow - new DateTime(2001, 6, 20);
-        // print("S: " + secondsSinceEpoch);
-
-        int hash = (int)t.TotalSeconds;
-        //   print(hash);
-
-        webForm.AddField("", 0);
-
-        print("Uploading...");
-        UnityWebRequest www = UnityWebRequest.Post("https://infiniteblockmdns.azurewebsites.net/append", webForm);
-        www.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        www.SetRequestHeader("Access-Control-Allow-Origin", "*");
-        yield return www.SendWebRequest();
-
-        if (www.isNetworkError || www.isHttpError)
-        {
-            print(www.error);
-        }
-        else
-        {
-            print("Form upload complete!");
-        }
     }
 
     IEnumerator Delete(string uid)
@@ -113,20 +87,8 @@ public class DataLoader : MonoBehaviour
     private void Start()
     {
         StartCoroutine(Download());
+        // StartCoroutine(Upload());
      //  StartCoroutine(Delete("1e99df13-79e4-437f-ab0a-85a341392eb5"));
     }
 
-    /*
-    // Update is called once per frame
-    void Update()
-    {
-        DisplayError = GameData.ErrorStatus;
-        
-        if (GameData.AccessMode == -1)
-        {
-            GameData.AccessMode = 0;
-            EraseData();
-        }
-    }
-    */
 }
