@@ -36,13 +36,10 @@ public class Player : MonoBehaviour
     {
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
-
+        
         Vector3 movement = new Vector3(moveX, 0f, moveZ);
-
+        
         rb.MovePosition(transform.position + moveSpeed * Time.deltaTime * movement);
-
-        float mouseX = Input.GetAxis("Mouse X");
-        transform.Rotate(Vector3.up * mouseX);
 
         if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
         {
@@ -51,18 +48,20 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void LateUpdate()
+    {
+        float mouseX = Input.GetAxis("Mouse X");
+        // float mouseY = Input.GetAxis("Mouse Y");
+        //
+        // playerCamera.transform.localRotation = Quaternion.Euler(mouseY, 0.0f, 0.0f);
+
+        transform.Rotate(Vector3.up * mouseX);
+    }
+
     public void PickupItem(Item item)
     {
         item.transform.position = pickupLocationLocal.position;
         item.transform.rotation = pickupLocationLocal.rotation;
         item.transform.parent = transform;
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isJumping = false;
-        }
     }
 }
