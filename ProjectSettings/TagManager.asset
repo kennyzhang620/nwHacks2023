@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - ItemViewCamera
+  - Wall
+  - Ground
   layers:
   - Default
   - TransparentFX

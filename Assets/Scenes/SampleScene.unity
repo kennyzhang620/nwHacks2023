@@ -218,6 +218,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5363502387369609697, guid: 1ac31ad456bd34025aeca0b1e195f0ef, type: 3}
+--- !u!1 &409299775
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 409299776}
+  m_Layer: 0
+  m_Name: RatSpawn1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &409299776
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409299775}
+  m_LocalRotation: {x: 0, y: -0.9848078, z: 0, w: 0.17364825}
+  m_LocalPosition: {x: -12.48, y: -6.58, z: 12.27}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: -160, z: 0}
 --- !u!1 &460066179
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,9 +636,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8281225196351300674, guid: 1ac31ad456bd34025aeca0b1e195f0ef, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: -6922844647460386177, guid: 1ac31ad456bd34025aeca0b1e195f0ef, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: -6702482319351990279, guid: 1ac31ad456bd34025aeca0b1e195f0ef, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: -5076484507258936684, guid: 1ac31ad456bd34025aeca0b1e195f0ef, type: 3}
       propertyPath: m_Lightmapping
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3790086800359879910, guid: 1ac31ad456bd34025aeca0b1e195f0ef, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 65702495048144492, guid: 1ac31ad456bd34025aeca0b1e195f0ef, type: 3}
       propertyPath: m_IsActive
@@ -616,6 +663,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1ac31ad456bd34025aeca0b1e195f0ef, type: 3}
       propertyPath: m_Name
       value: level meshes (office)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1491437959730345746, guid: 1ac31ad456bd34025aeca0b1e195f0ef, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094748623959229019, guid: 1ac31ad456bd34025aeca0b1e195f0ef, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 7150271390905787125, guid: 1ac31ad456bd34025aeca0b1e195f0ef, type: 3}
       propertyPath: m_LocalScale.x
@@ -1773,15 +1828,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 652639417223338698, guid: 9c82e39c15f868f4a89f645df658b57b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.33
+      value: 0.32
       objectReference: {fileID: 0}
     - target: {fileID: 652639417223338698, guid: 9c82e39c15f868f4a89f645df658b57b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.37
+      value: -2.59
       objectReference: {fileID: 0}
     - target: {fileID: 652639417223338698, guid: 9c82e39c15f868f4a89f645df658b57b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.46
+      value: -1.22
       objectReference: {fileID: 0}
     - target: {fileID: 652639417223338698, guid: 9c82e39c15f868f4a89f645df658b57b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1872,6 +1927,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 779160096}
+    - target: {fileID: 459276212100518035, guid: 04041e506e992034c896d153dc6988a1, type: 3}
+      propertyPath: RatPrefab
+      value: 
+      objectReference: {fileID: 6494997264472091919, guid: efdf92c0c841c274283d4449a3c3388a, type: 3}
+    - target: {fileID: 459276212100518035, guid: 04041e506e992034c896d153dc6988a1, type: 3}
+      propertyPath: ratSpawn1
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 459276212100518035, guid: 04041e506e992034c896d153dc6988a1, type: 3}
       propertyPath: playerTextBox
       value: 

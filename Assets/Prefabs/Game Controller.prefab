@@ -48,3 +48,5 @@ MonoBehaviour:
   player: {fileID: 0}
   playerTextBox: {fileID: 0}
   visionTriggerLayerName: Newspaper
+  RatPrefab: {fileID: 6494997264472091919, guid: efdf92c0c841c274283d4449a3c3388a, type: 3}
+  ratSpawnRadius: 5

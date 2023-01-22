@@ -6,6 +6,7 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     private bool pickedUp;
+    public bool PickedUp => pickedUp;
     private Rigidbody rb;
 
     private void Awake()
@@ -34,7 +35,7 @@ public class Item : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        print("trigger");
+        // print("trigger");
         if (!pickedUp && other.CompareTag("Player"))
         {
             if(Input.GetKey(KeyCode.E))
