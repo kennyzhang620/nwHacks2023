@@ -691,6 +691,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: level meshes (office)
       objectReference: {fileID: 0}
+    - target: {fileID: 2094748623959229019, guid: 1ac31ad456bd34025aeca0b1e195f0ef, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ac31ad456bd34025aeca0b1e195f0ef, type: 3}
 --- !u!1 &693867646 stripped
