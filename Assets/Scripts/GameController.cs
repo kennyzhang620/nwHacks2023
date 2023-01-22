@@ -24,6 +24,8 @@ public class GameController : MonoBehaviour
     public GameObject RatPrefab;
     public float ratSpawnRadius;
     public Transform ratSpawn1;
+    public Transform ratSpawn2;
+    public int numRatSpawn = 25;
 
     private void updateCameras()
     {
@@ -97,7 +99,7 @@ public class GameController : MonoBehaviour
 
     //spawn rat in its default state
     //spawns at random circle near player if no tf given
-    private void spawnRat(Transform tf = null)
+    private void spawnRat(Transform tf = null, int initState=0)
     {
         if (tf == null)
         {
@@ -107,11 +109,16 @@ public class GameController : MonoBehaviour
             pos.z += (float)(ratSpawnRadius * Math.Sin(angle));
             pos.y = player.playerFeet.position.y;
             var rot = player.transform.rotation;
-            rats.Add(Instantiate(RatPrefab, pos, rot).GetComponent<Rat>());
+            var rat = Instantiate(RatPrefab, pos, rot).GetComponent<Rat>();
+            rat.ratState = initState;
+            rats.Add(rat);
+            
         }
         else
         {
-            rats.Add(Instantiate(RatPrefab, tf).GetComponent<Rat>());
+            var rat = Instantiate(RatPrefab, tf).GetComponent<Rat>();
+            rat.ratState = initState;
+            rats.Add(rat);
         }
         
         updateCameras();    
@@ -119,7 +126,16 @@ public class GameController : MonoBehaviour
 
     public void SpawnRatScareEvent()
     {
-        spawnRat(ratSpawn1);
+        spawnRat();
+    }
+
+    public void SpawnRatAttackEvent()
+    {
+        SendTextMessageToPlayer("We suggest you find a weapon. Soon.", 10);
+        for (int i = 0; i < numRatSpawn; i++)
+        {
+            spawnRat(null,1);
+        }
     }
 
 

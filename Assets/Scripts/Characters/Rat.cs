@@ -9,6 +9,7 @@ public class Rat : MonoBehaviour
     public float moveSpeed;
     public Camera faceCamera;
     public Camera backCamera;
+    public int ratState = 0;
 
     private void Awake()    
     {
@@ -18,7 +19,12 @@ public class Rat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(dashForward());
+        if(ratState == 0)
+            StartCoroutine(dashForward());
+        else if (ratState == 1)
+        {
+            print("rat attack event");
+        }
     }
 
     // Update is called once per frame
@@ -37,6 +43,17 @@ public class Rat : MonoBehaviour
         GameController.gameController.SwitchToCamWithName(GameController.gameController.player.PlayerCamera.name);
         GameController.gameController.DestroyRat(this);
     }
+    
+    // //coroutine for rat scare event
+    // IEnumerator dashForward(float cameraSwitchTime=5f)
+    // {
+    //     GameController.gameController.SwitchToCamWithName(backCamera.name);
+    //     yield return new WaitForSeconds(cameraSwitchTime/2);
+    //     GameController.gameController.SwitchToCamWithName(faceCamera.name); 
+    //     yield return new WaitForSeconds(cameraSwitchTime/2);
+    //     GameController.gameController.SwitchToCamWithName(GameController.gameController.player.PlayerCamera.name);
+    //     GameController.gameController.DestroyRat(this);
+    // }
 
     private void OnCollisionEnter(Collision collision)
     {

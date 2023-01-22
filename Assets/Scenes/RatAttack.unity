@@ -146,14 +146,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44265049}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.34, y: -9.91, z: 9.47}
+  m_LocalRotation: {x: -0, y: 0.921063, z: -0, w: 0.38941354}
+  m_LocalPosition: {x: -5.64, y: -8.46, z: 9.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 134.164, z: 0}
 --- !u!1001 &134648755
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -402,7 +402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3978406803631424046, guid: 961fc08daceaf394c82ddb2a53571804, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.25
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 3978406803631424046, guid: 961fc08daceaf394c82ddb2a53571804, type: 3}
       propertyPath: m_LocalPosition.z
@@ -549,15 +549,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2517118509743334168, guid: e74e5c596863496488247ac0093204bf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.14
+      value: -16.27
       objectReference: {fileID: 0}
     - target: {fileID: 2517118509743334168, guid: e74e5c596863496488247ac0093204bf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.38
+      value: -4.6
       objectReference: {fileID: 0}
     - target: {fileID: 2517118509743334168, guid: e74e5c596863496488247ac0093204bf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.273333
+      value: 9.97
       objectReference: {fileID: 0}
     - target: {fileID: 2517118509743334168, guid: e74e5c596863496488247ac0093204bf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -604,6 +604,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6045f88ee1ef9064ba6785bb23a6b41d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &982052124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 982052125}
+  m_Layer: 0
+  m_Name: RatSpawn1b
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &982052125
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982052124}
+  m_LocalRotation: {x: -0, y: 0.7072576, z: -0, w: 0.70695597}
+  m_LocalPosition: {x: -3, y: -9.03, z: 5.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 90.024, z: 0}
 --- !u!1 &1171541677
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,6 +666,64 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1274379053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1274379054}
+  - component: {fileID: 1274379056}
+  - component: {fileID: 1274379055}
+  m_Layer: 0
+  m_Name: InvestigateTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1274379054
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274379053}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.16, y: -9.3, z: 6.73}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1274379055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274379053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19cabfbc59a4d6e4388c8d70d88194a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &1274379056
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274379053}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 6
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1420783571 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7238959331026368832, guid: fc9b6bf83d1e74946940dde366dc45a6, type: 3}
@@ -652,6 +741,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb32b8b8ae440289dcb07c0267f0690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &1420783580
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420783571}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1774573828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,7 +1144,7 @@ PrefabInstance:
     - target: {fileID: 459276212100518035, guid: 04041e506e992034c896d153dc6988a1, type: 3}
       propertyPath: ratSpawn1
       value: 
-      objectReference: {fileID: 44265050}
+      objectReference: {fileID: 982052125}
     - target: {fileID: 459276212100518035, guid: 04041e506e992034c896d153dc6988a1, type: 3}
       propertyPath: ratSpawn2
       value: 
@@ -1162,6 +1267,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1068948234711520125, guid: fc9b6bf83d1e74946940dde366dc45a6, type: 3}
+      propertyPath: jumpForce
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068948234711520125, guid: fc9b6bf83d1e74946940dde366dc45a6, type: 3}
+      propertyPath: moveSpeed
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1068948234711520125, guid: fc9b6bf83d1e74946940dde366dc45a6, type: 3}
       propertyPath: defaultFov
       value: 60
