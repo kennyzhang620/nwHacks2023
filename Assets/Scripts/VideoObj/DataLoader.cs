@@ -39,7 +39,7 @@ public class DataLoader : MonoBehaviour
         print("Uploading...");
 
         byte[] bytes = Encoding.ASCII.GetBytes("{\"name\":\"exmpl\"}");
-        UnityWebRequest www = UnityWebRequest.Put("https://livepeer.studio/api/asset/request-upload", bytes);
+        UnityWebRequest www = UnityWebRequest.Post("https://livepeer.studio/api/asset/request-upload", webForm);
         www.SetRequestHeader("Authorization", "Bearer 0488e0b2-7284-42cd-ad30-64a49b924d6c");
         www.SetRequestHeader("Access-Control-Allow-Origin", "*");
         www.SetRequestHeader("Content-Type", "application/json");
