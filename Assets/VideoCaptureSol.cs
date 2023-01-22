@@ -78,7 +78,7 @@ public class VideoCaptureSol : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        print("test: " + Application.persistentDataPath+"/test.mp4");
+       // print("test: " + Application.persistentDataPath+"/test.mp4");
     }
 
     void Update()
@@ -87,7 +87,7 @@ public class VideoCaptureSol : MonoBehaviour
         if (test)
         {
             StartVideoCaptureTest();
-            StartCoroutine(Upload(Application.persistentDataPath + "/test.mp4"));
+          //  StartCoroutine(Upload(Application.persistentDataPath + "/test.mp4"));
             test = false;
         }
         if (m_VideoCapture == null || !m_VideoCapture.IsRecording)
