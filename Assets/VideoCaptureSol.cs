@@ -63,7 +63,17 @@ public class VideoCaptureSol : MonoBehaviour
             www2.SetRequestHeader("Content-Type", "video/mp4");
 
             yield return www2.SendWebRequest();
+
+            if (www2.isNetworkError || www2.isHttpError)
+            {
+                print(www2.error);
+            }
+            else
+            {
+                print("Success!");
+            }
         }
+
     }
 
 
