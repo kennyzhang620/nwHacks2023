@@ -5,6 +5,11 @@ Entry for nwHacks2023 (We submitted a videogame!)
 
 Missing Mystery is an investigation mystery game with a bit of thrill. The main technical points were to integrate the unity3D game engine with the livepeer video streaming API. After seeing the livepeer presentation, we were inspired by the idea of a game that leveraged a decentralized video hosting source. Within the game the player prepares for a long day of investigating the Mayors sudden disappearance. After analyzing the video clip evidence, strange occurrences happen around the office, you decide to take a closer look into what's causing these bizarre events. This game uses Livepeer's REST API and decentralized video storage/streaming to store and present the mystery scenes in real time to enrich the story. It uses a combination of Unity's 3D rendering systems with the video streaming power of Livepeer's open source REST API.
 
+## Links
+
+* [Livepeer](https://livepeer.org/)
+* [Game Files, .exe compiled for Windows](https://drive.google.com/drive/folders/1ln4aBqs7RGkPCAkPeopcmEWsVqFBOEOB) 
+
 ## What we learned
 
 * We learned about sending and receiving web requests via unity and web api
